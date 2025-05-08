@@ -1,0 +1,18 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "linha-artistica/la_port_fullstack",
+  "version": "0.1.0",
+  "title": "Linha Artística Portfolio",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Show portfolio",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "block-show-page",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "render": "file:./render.php"
+}
