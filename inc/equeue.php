@@ -8,7 +8,7 @@ function la_port_fullstack_enqueue()
     $scrits_file = LA_PORT_FULL_URL . "assets/js/script-front.js";
     $path = LA_PORT_FULL_PATH . "assets/js/script-front.js";
 
-    wp_enqueue_style('la-port-fulls-stylefront', $style_file);
+    wp_enqueue_style('la-port-fulls-style-fronts', $style_file);
 
     $version = filectime($path);
 

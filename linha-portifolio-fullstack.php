@@ -17,26 +17,29 @@ define("LA_PORT_FULL_URL", plugin_dir_url(__FILE__));
 define("LA_PORT_FULL_PATH", plugin_dir_path(__FILE__));
 
 $files = array(
-    'equeue',
-    'function',
-    'ajax-web',
+    'inc/equeue',
+    // 'inc/function-template',
+    'inc/ajax-web',
 
-    'inc/cpt/dev/register',
-    'inc/cpt/dev/metabox-upload',
-    'inc/cpt/dev/save-upload',
+    "inc/public/template-function",
+    "inc/admin/template-function",
 
-    'inc/cpt/web/register',
+    'inc/admin/cpt/dev/register',
+    'inc/admin/cpt/dev/metabox-upload',
+    'inc/admin/cpt/dev/save-upload',
+
+    'inc/admin/cpt/web/register',
 
 
-    'inc/cpt/metabox-destaque',
-    'inc/cpt/metabox-taxonomys',
-    'inc/cpt/metabox-galery',
-    'inc/cpt/save-gallery',
-    'inc/cpt/save',
-    'inc/cpt/gutemberg',
+    'inc/admin/cpt/metabox-destaque',
+    'inc/admin/cpt/metabox-taxonomys',
+    'inc/admin/cpt/metabox-galery',
+    'inc/admin/cpt/save-gallery',
+    'inc/admin/cpt/save',
+    'inc/admin/cpt/gutemberg',
 
-    'inc/taxonomy/metas',
-    'inc/taxonomy/register',
+    'inc/admin/taxonomy/metas',
+    'inc/admin/taxonomy/register',
 
     'inc/class/upload',
 );
@@ -65,4 +68,16 @@ function my_custom_block()
     register_block_type('linha-artistica/la_port_fullstack', array(
         'editor_script' => 'index',
     ));
+}
+
+
+add_filter('single_template', 'la_port_fulls_custom_template_function');
+function la_port_fulls_custom_template_function($page_template)
+{
+    $id =  get_the_ID();
+    $cpt = get_post_type($id);
+    if ($cpt == LA_PORT_FULL_CPT_DEV || $cpt == LA_PORT_FULL_CPT_WEB) {
+        $page_template = LA_PORT_FULL_PATH . 'templates/public/single-page.php';
+    }
+    return $page_template;
 }

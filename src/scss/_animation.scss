@@ -1,0 +1,48 @@
+// Animations
+@keyframes in_by_left {
+    from {
+        transform: translate(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes in_by_right {
+    from {
+        transform: translate(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes out_to_left {
+    from {
+        transform: translate(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes out_to_right {
+    from {
+        transform: translate(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(100%);
+        opacity: 0;
+    }
+}

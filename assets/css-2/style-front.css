@@ -1,3 +1,15 @@
+.la-btn {
+  display: block;
+  margin: 1rem auto !important;
+  outline: none;
+  border: 0.5px solid black;
+  border-radius: 5px;
+  padding: 0.5rem 2rem !important;
+  background-color: transparent; }
+  .la-btn:hover {
+    background-color: black;
+    color: white; }
+
 .la-port-fulls-carousel-content {
   width: 100%;
   height: 100%;
@@ -11,14 +23,15 @@
     width: 40px;
     height: 40px;
     background-color: rgba(255, 255, 255, 0.5);
-    z-index: 4;
+    z-index: 3;
     top: 50%;
     transform: translate(-50%);
     right: 0.3%;
     transform-origin: center;
     border-radius: 50%;
     transition: opacity 0.2s linear;
-    cursor: pointer; }
+    cursor: pointer;
+    z-index: 4; }
     .la-port-fulls-carousel-content .btn-prev img,
     .la-port-fulls-carousel-content .btn-next img {
       width: 60%;
@@ -34,8 +47,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    overflow: hidden; }
+    z-index: 1; }
     .la-port-fulls-carousel-content .la-port-fulls-carousel img {
       width: 100%;
       height: 100%;
@@ -48,8 +60,7 @@
       animation-timing-function: ease-in-out;
       animation-fill-mode: forwards;
       z-index: 1;
-      transition: left 0.3s linear;
-      display: block; }
+      transition: left 0.3s linear; }
       .la-port-fulls-carousel-content .la-port-fulls-carousel img.active {
         display: block;
         z-index: 3; }
@@ -64,14 +75,151 @@
         display: block;
         animation-name: out_to_left; }
 
-.slide-content {
-  align-items: auto; }
+.la-indicators-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px; }
+  .la-indicators-content > div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid darkgray; }
+    .la-indicators-content > div.active {
+      background-color: #7d7d7d; }
 
-.single-pg .la-port-fulls-carousel {
-  height: 400px; }
-  .single-pg .la-port-fulls-carousel img {
-    height: 80%;
-    object-fit: contain; }
+.la-port-fulls-modal-img .btn-prev {
+  left: 1%; }
+  @media (min-width: 768px) {
+    .la-port-fulls-modal-img .btn-prev {
+      right: 0%; } }
+.la-port-fulls-modal-img .btn-next {
+  left: auto;
+  right: -5%; }
+  @media (min-width: 768px) {
+    .la-port-fulls-modal-img .btn-next {
+      right: -3%; } }
+.la-port-fulls-modal-img .la-port-fulls-carousel img {
+  object-fit: contain;
+  object-position: center; }
+
+.la-port-fulls-modal-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  margin: 0;
+  padding: 0; }
+  .la-port-fulls-modal-bg .la-port-fulls-modal {
+    background-color: white;
+    width: 1200px;
+    max-width: 98vw;
+    height: 95vh;
+    border-radius: 10px;
+    overflow: auto;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    position: relative; }
+    @media (min-width: 768px) {
+      .la-port-fulls-modal-bg .la-port-fulls-modal {
+        overflow: hidden; } }
+    .la-port-fulls-modal-bg .la-port-fulls-modal .btn-close {
+      position: fixed;
+      background-color: black;
+      width: 50px;
+      height: 50px;
+      border: none;
+      outline: none;
+      padding: 0;
+      z-index: 5;
+      opacity: 1;
+      top: 2.5%;
+      right: 1%;
+      border-radius: 0 10px 0 10px; }
+      @media (min-width: 768px) {
+        .la-port-fulls-modal-bg .la-port-fulls-modal .btn-close {
+          background-color: transparent;
+          left: auto;
+          right: 0; } }
+    @media (min-width: 768px) {
+      .la-port-fulls-modal-bg .la-port-fulls-modal {
+        display: flex; } }
+    .la-port-fulls-modal-bg .la-port-fulls-modal .la-port-fulls-modal-detalhes,
+    .la-port-fulls-modal-bg .la-port-fulls-modal .la-port-fulls-modal-img {
+      width: 100%; }
+      @media (min-width: 768px) {
+        .la-port-fulls-modal-bg .la-port-fulls-modal .la-port-fulls-modal-detalhes,
+        .la-port-fulls-modal-bg .la-port-fulls-modal .la-port-fulls-modal-img {
+          width: 50%; } }
+      .la-port-fulls-modal-bg .la-port-fulls-modal .la-port-fulls-modal-detalhes .la-port-fulls-modal-list,
+      .la-port-fulls-modal-bg .la-port-fulls-modal .la-port-fulls-modal-img .la-port-fulls-modal-list {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin-top: 1rem; }
+        .la-port-fulls-modal-bg .la-port-fulls-modal .la-port-fulls-modal-detalhes .la-port-fulls-modal-list img,
+        .la-port-fulls-modal-bg .la-port-fulls-modal .la-port-fulls-modal-img .la-port-fulls-modal-list img {
+          width: 15%;
+          height: 80px;
+          object-fit: cover;
+          padding: 2px;
+          cursor: pointer;
+          transition: transform 0.2s line;
+          border: solid gray 2px; }
+          .la-port-fulls-modal-bg .la-port-fulls-modal .la-port-fulls-modal-detalhes .la-port-fulls-modal-list img:hover,
+          .la-port-fulls-modal-bg .la-port-fulls-modal .la-port-fulls-modal-img .la-port-fulls-modal-list img:hover {
+            transform: scale(1.05); }
+    .la-port-fulls-modal-bg .la-port-fulls-modal .la-port-fulls-modal-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 60%;
+      overflow: hidden; }
+      @media (min-width: 768px) {
+        .la-port-fulls-modal-bg .la-port-fulls-modal .la-port-fulls-modal-img {
+          height: 95%; } }
+      .la-port-fulls-modal-bg .la-port-fulls-modal .la-port-fulls-modal-img .la-port-full-img-destaque {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 5px;
+        position: relative;
+        z-index: 1; }
+        @media (min-width: 768px) {
+          .la-port-fulls-modal-bg .la-port-fulls-modal .la-port-fulls-modal-img .la-port-full-img-destaque {
+            object-fit: contain;
+            height: calc(100% - 150px); } }
+        .la-port-fulls-modal-bg .la-port-fulls-modal .la-port-fulls-modal-img .la-port-full-img-destaque::before {
+          content: "";
+          width: 100%;
+          height: 50px;
+          bottom: 0;
+          position: absolute;
+          left: 0;
+          z-index: 2;
+          background: linear-gradient(0deg, white 0%, rgba(255, 255, 255, 0) 100%); }
+    .la-port-fulls-modal-bg .la-port-fulls-modal .la-port-fulls-modal-detalhes {
+      display: flex;
+      padding: 2rem;
+      align-items: stretch;
+      flex-direction: column;
+      justify-content: space-between; }
+      .la-port-fulls-modal-bg .la-port-fulls-modal .la-port-fulls-modal-detalhes .la-port-fulls-modal-detalhes-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-grow: 1;
+        max-height: 100%;
+        overflow-y: auto; }
 
 .la-fulls-content .la-fulls-grid-highlight-content-grid,
 .la-fulls-content .la-fulls-grid-highlight-content {
@@ -124,6 +272,7 @@
       transition: transform 0.05s ease-in-out;
       cursor: pointer;
       flex-direction: column;
+      display: flex;
       justify-content: space-between; }
       .la-fulls-content .la-fulls-grid-highlight-content-grid > div .la-card h3 {
         font-size: 3rem; }
@@ -186,44 +335,5 @@
   to {
     transform: translate(100%);
     opacity: 0; } }
-@keyframes in_by_left {
-  from {
-    transform: translate(-100%);
-    opacity: 0; }
-  to {
-    transform: translate(0);
-    opacity: 1; } }
-@keyframes in_by_right {
-  from {
-    transform: translate(100%);
-    opacity: 0; }
-  to {
-    transform: translate(0);
-    opacity: 1; } }
-@keyframes out_to_left {
-  from {
-    transform: translate(0);
-    opacity: 1; }
-  to {
-    transform: translate(-100%);
-    opacity: 0; } }
-@keyframes out_to_right {
-  from {
-    transform: translate(0);
-    opacity: 1; }
-  to {
-    transform: translate(100%);
-    opacity: 0; } }
-.la-btn {
-  display: block;
-  margin: 1rem auto !important;
-  outline: none;
-  border: 0.5px solid black;
-  border-radius: 5px;
-  padding: 0.5rem 2rem !important;
-  background-color: transparent; }
-  .la-btn:hover {
-    background-color: black;
-    color: white; }
 
 /*# sourceMappingURL=style-front.css.map */
