@@ -14,7 +14,7 @@ function la_port_fulls_render_slide_simple($post_id)
 ?>
 
     <?php if ($img_json != null && $img_json != '') : ?>
-        <img style="width: 100%; object-fit: cover; height: 100%;" src='<?php echo wp_get_attachment_image_url($img_json[0], "medium_large") ?>' alt=" First slide" loading="lazy" />
+        <img style="width: 100%; object-fit: cover; height: 100%;" src='<?php echo wp_get_attachment_image_url($img_json[0], "medium_large") ?>' alt="Image slide Carrousel" loading="lazy" />
     <?php endif; ?>
 
 <?php

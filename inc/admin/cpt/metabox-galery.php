@@ -20,9 +20,9 @@ function la_port_fulls_render_galeria()
             <?php if ($img_json != null && $img_json != '') : ?>
                 <?php foreach ($img_json as $key => $value) : ?>
                     <div class="img-prev-content" style="">
-                        <img class="img-prev" src='<?php echo wp_get_attachment_image_url($value, "medium_large") ?>' />
-                        <img class='btn trash' onclick='removeImg(event)' src='<?php echo $icon_trash ?>' />
-                        <img class='btn sortle' src='<?php echo $icon_move ?>' />
+                        <img class="img-prev" alt="prev-icon" src='<?php echo wp_get_attachment_image_url($value, "medium_large") ?>' />
+                        <img class='btn trash' alt="trash-icon" onclick='removeImg(event)' src='<?php echo $icon_trash ?>' />
+                        <img class='btn sortle' alt="sortle-icon" src='<?php echo $icon_move ?>' />
                         <input type='hidden' value='<?php echo $value; ?>' name='la_port_fulls_galeria_imgs[]' />
                     </div>
                 <?php endforeach; ?>

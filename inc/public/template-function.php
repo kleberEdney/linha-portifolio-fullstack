@@ -5,11 +5,8 @@ function la_port_fulls_render_tecnolog($post_id, $size = 30)
 {
     $term_list = get_the_terms($post_id, LA_PORT_FULL_TAX);
     $tax = LA_PORT_FULL_TAX . "-img";
-
     $onclick = "";
-
 ?>
-
     <?php foreach ($term_list as $term) : ?>
         <?php
         $image = get_term_meta($term->term_id, $tax, true);
@@ -33,7 +30,6 @@ function la_port_fulls_render_slide($post_id, $modal = false)
 
     <?php if (!empty($img_json) && is_array($img_json)) : ?>
         <div id="la-port-fulls-img-<?php echo $post_id ?>" class="la-port-fulls-carousel-content">
-
             <?php echo la_port_fulls_render_carrousel_btn($img_json, 'prev') ?>
 
             <div class="la-port-fulls-carousel">
@@ -61,7 +57,7 @@ function la_port_fulls_render_carrousel_btn($img_json, $side)
 ?>
     <?php if (count($img_json) > 2): ?>
         <button class="btn-<?php echo $side ?>" onclick="laPortFullSlideShow(this, '<?php echo $side ?>')">
-            <img src="<?php echo LA_PORT_FULL_URL . "assets/media/next.svg" ?>" alt="">
+            <img src="<?php echo LA_PORT_FULL_URL . "assets/media/next.svg" ?>" alt="<?php echo $side ?>" />
         </button>
     <?php endif; ?>
 

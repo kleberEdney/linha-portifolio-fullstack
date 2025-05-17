@@ -24,7 +24,7 @@ function la_port_fullstack_metabox_cpt($post)
 
                 ?>
                 <input type="checkbox" value="<?php echo $value->slug ?>" name="la-port-fulls-tx-post[]" <?php echo $checked ?>>
-                <img src="<?php echo $image; ?>" alt="" id="tax-img" width="25" height="25" style="object-fit: cover">
+                <img src="<?php echo $image; ?>" alt="preview-gallery" id="tax-img" width="25" height="25" style="object-fit: cover">
                 <label for=""><?php echo $value->name ?> </label>
             </div>
         <?php endforeach; ?>

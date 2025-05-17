@@ -61,6 +61,7 @@ add_action('init', 'la_port_fullstack_post_type_layout', 0);
 // Adiciona a metabox
 function la_port_fulls_addmetabox_cpt_dev()
 {
+	add_meta_box(LA_PORT_FULL_CPT_DEV . '-link', 'Link', 'la_port_fulls_render_link', LA_PORT_FULL_CPT_DEV, 'normal', 'high');
 	add_meta_box(LA_PORT_FULL_TAX . "-id", 'Tecnologia', 'la_port_fullstack_metabox_cpt', LA_PORT_FULL_CPT_DEV, 'side');
 	add_meta_box(LA_PORT_FULL_CPT_DEV . "-destaque", 'Destaque', 'la_port_fullstack_destaque', LA_PORT_FULL_CPT_DEV, 'side');
 	add_meta_box(LA_PORT_FULL_CPT_DEV . "-iframe", 'Iframe', 'portfolio_zip_metabox_html', LA_PORT_FULL_CPT_DEV, 'side');

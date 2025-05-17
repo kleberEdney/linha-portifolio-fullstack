@@ -3,7 +3,6 @@
 
 function la_port_fullstack_enqueue()
 {
-
     $style_file = LA_PORT_FULL_URL . "assets/css/style-front.css";
     $scrits_file = LA_PORT_FULL_URL . "assets/js/script-front.js";
     $path = LA_PORT_FULL_PATH . "assets/js/script-front.js";

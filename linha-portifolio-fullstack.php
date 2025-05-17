@@ -34,6 +34,7 @@ $files = array(
     'inc/admin/cpt/metabox-destaque',
     'inc/admin/cpt/metabox-taxonomys',
     'inc/admin/cpt/metabox-galery',
+    'inc/admin/cpt/metabox-link',
     'inc/admin/cpt/save-gallery',
     'inc/admin/cpt/save',
     'inc/admin/cpt/gutemberg',

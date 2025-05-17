@@ -29,6 +29,21 @@ function la_port_fulls_save_custom_taxonomy_meta($post_id)
     } else {
         delete_post_meta($post_id, 'la_port_fulls_destaque');
     }
+
+
+    if (isset($_POST['la_port_fulls_links'])) {
+        $value = sanitize_text_field($_POST['la_port_fulls_links']);
+        update_post_meta($post_id, 'la_port_fulls_links', $value);
+    } else {
+        delete_post_meta($post_id, 'la_port_fulls_links');
+    }
+
+    if (isset($_POST['la_port_fulls_links_label'])) {
+        $value = sanitize_text_field($_POST['la_port_fulls_links_label']);
+        update_post_meta($post_id, 'la_port_fulls_links_label', $value);
+    } else {
+        delete_post_meta($post_id, 'la_port_fulls_links_label');
+    }
 }
 add_action('save_post_' .  LA_PORT_FULL_CPT_DEV, 'la_port_fulls_save_custom_taxonomy_meta');
 add_action('save_post_' .  LA_PORT_FULL_CPT_WEB, 'la_port_fulls_save_custom_taxonomy_meta');

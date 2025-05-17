@@ -12,6 +12,14 @@ $title = $postPort->post_title;
 $has_index = false;
 $conteudo_url = "";
 
+$link = get_post_meta($post_id, 'la_port_fulls_links', true);
+$link_label = get_post_meta($post_id, 'la_port_fulls_links_label', true);
+
+if (empty($link_label)) {
+    $link_label =  str_replace("https://", "", $link);
+    $link_label =  str_replace("http://", "", $link_label);
+}
+
 
 $nome_conteudo = get_post_meta($post_id, '_portfolio_nome_conteudo', true);
 if (!empty($nome_conteudo)) {
@@ -25,7 +33,7 @@ if (!empty($nome_conteudo)) {
     .contant-front {
         display: flex;
         justify-content: center;
-        max-width: 1920px;
+        max-width: 1024px;
 
         margin: auto;
         gap: 3rem;
@@ -60,6 +68,13 @@ if (!empty($nome_conteudo)) {
                     <a class="la-btn" href="<?php echo $conteudo_url ?>" target="_blank" style="max-width: max-content; margin: auto;">Mostrar Conteúdo</a>
                 </div>
             <?php endif; ?>
+
+            <?php if (!empty($link)) : ?>
+                <div>
+                    <a class="la-btn" href="<?php echo $link ?>" target="_blank" style="max-width: max-content; margin: auto;"><?php echo $link_label  ?></a>
+                </div>
+            <?php endif; ?>
+
         </div>
         <div class="la-port-fulls-modal-detalhes-footer">
             <hr>

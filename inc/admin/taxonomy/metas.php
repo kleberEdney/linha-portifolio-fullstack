@@ -5,13 +5,13 @@
 // Adiciona um campo de imagem na taxonomia
 function la_port_fullstack_add_image_field_to_taxonomy($taxonomy)
 {
-    ?>
+?>
     <div class="form-field term-group">
         <label for="<?= LA_PORT_FULL_TAX ?>_image"><?php _e('Imagem', 'textdomain'); ?></label>
         <input type="text" id="<?= LA_PORT_FULL_TAX ?>_image" name="<?= LA_PORT_FULL_TAX ?>_image" value="" />
         <input type="button" class="button" value="<?php _e('Upload Image', 'textdomain'); ?>" />
     </div>
-    <?php
+<?php
 }
 add_action(LA_PORT_FULL_TAX . "_add_form_fields", 'la_port_fullstack_add_image_field_to_taxonomy', 10, 2);
 
@@ -20,17 +20,17 @@ function la_port_fullstack_edit_image_field_in_taxonomy($term, $taxonomy)
 {
     $tax = LA_PORT_FULL_TAX . "-img";
     $image = get_term_meta($term->term_id, $tax, true);
-    ?>
+?>
     <tr class="form-field term-group-wrap">
         <th scope="row"><label for="<?= $tax ?>"><?php _e('Imagem', 'textdomain'); ?></label></th>
         <td>
-            <img src="<?php echo esc_attr($image); ?>" alt="" id="tax-img" width="100" height="100"
+            <img src="<?php echo esc_attr($image); ?>" alt="image-tax" id="tax-img" width="100" height="100"
                 style="object-fit: cover">
             <input type="text" id="tax-img-input" name="<?php echo $tax ?>" value="<?php echo esc_attr($image); ?>" />
             <input type="button" onclick="laPortifolioStakMetaMedias(event)" class="button" value="Upload Image" />
         </td>
     </tr>
-    <?php
+<?php
 }
 add_action(LA_PORT_FULL_TAX . '_edit_form_fields', 'la_port_fullstack_edit_image_field_in_taxonomy', 10, 2);
 
