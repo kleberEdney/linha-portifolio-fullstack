@@ -59,19 +59,19 @@ if (!empty($nome_conteudo)) {
     <div class="details-content">
 
         <div class="la-port-fulls-modal-detalhes-body">
-            <h3><?php echo $title ?></h3>
+            <h2><?php echo $title ?></h2>
             <div>
                 <?php echo wpautop($content) ?>
             </div>
             <?php if ($conteudo_url !=  "" &&  $has_index) : ?>
                 <div>
-                    <a class="la-btn" href="<?php echo $conteudo_url ?>" target="_blank" style="max-width: max-content; margin: auto;">Mostrar Conteúdo</a>
+                    <a aria-label="Veja conteúdo desenvolvido" class="la-btn" href="<?php echo $conteudo_url ?>" target="_blank" style="max-width: max-content; margin: auto;">Mostrar Conteúdo</a>
                 </div>
             <?php endif; ?>
 
             <?php if (!empty($link)) : ?>
                 <div>
-                    <a class="la-btn" href="<?php echo $link ?>" target="_blank" style="max-width: max-content; margin: auto;"><?php echo $link_label  ?></a>
+                    <a aria-label="Acesse o conteúdo desenvolvido" class="la-btn" href="<?php echo $link ?>" target="_blank" style="max-width: max-content; margin: auto;"><?php echo $link_label  ?></a>
                 </div>
             <?php endif; ?>
 

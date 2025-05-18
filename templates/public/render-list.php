@@ -12,7 +12,7 @@
                                 <?php echo la_port_fulls_render_slide($post_id) ?>
                                 <div onclick="laFullsShowJob('<?php echo $post_id ?>', '<?php echo $a['type'] ?>')" class="la-port-fulls-carousel-action"></div>
                             </div>
-                            <?php the_title('<h3>', '</h3>'); ?>
+                            <?php the_title('<h2 style="font-size:2rem">', '</h2>'); ?>
                             <?php the_excerpt() ?>
 
                         </div>
@@ -21,8 +21,8 @@
                                 <?php echo la_port_fulls_render_tecnolog($post_id) ?>
                             </div>
                             <div>
-                                <a href="<?= permalink_link($post_id) ?>">
-                                    <button class="la-btn">Veja mais</button>
+                                <a href="<?= permalink_link($post_id) ?>" aria-label="Acesse Conteúdo desenvolvido">
+                                    <button aria-label="Vej Mais" class="la-btn">Veja mais</button>
                                 </a>
                             </div>
                         </div>

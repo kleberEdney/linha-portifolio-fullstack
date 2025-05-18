@@ -40,7 +40,7 @@ function la_port_fullstack_render($cpt)
             <ul>
                 <?php foreach ($nav_items as $item): ?>
                     <li>
-                        <a href="<?= $url . "?i=" . $item->post_name ?>">
+                        <a href="<?= $url . "?i=" . $item->post_name ?>" aria-label="Conteúdo iframe">
                             <div class="iframe-content-nav-item">
                                 <div>
                                     <span>

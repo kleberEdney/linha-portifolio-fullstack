@@ -10,7 +10,7 @@ function la_port_fulls_render_tecnolog($post_id, $size = 30)
     <?php foreach ($term_list as $term) : ?>
         <?php
         $image = get_term_meta($term->term_id, $tax, true);
-        echo '<img src="' . $image . '" width="' . $size . '" height="' . $size . '"  title="' . $term->name . '" class="" style="object-fit: contain" ' .  $onclick . ' />'
+        echo '<img src="' . $image . '" width="' . $size . '" height="' . $size . '"  title="' . $term->name . '" class="" style="object-fit: contain" ' .  $onclick . ' loading="lazy" />'
         ?>
     <?php endforeach; ?>
 
@@ -41,7 +41,7 @@ function la_port_fulls_render_slide($post_id, $modal = false)
                         $event = 'onclick="window.open(\'' . $img_zoom . '\', \'_blank\'); return false"';
                     }
                     ?>
-                    <img style="left: <?php echo  $pos_x  ?>%" class="img-show" src='<?php echo wp_get_attachment_image_url($value, "medium_large") ?>' loading="lazy" <?php echo $event ?> />
+                    <img alt="Slides show imagem" style="left: <?php echo  $pos_x  ?>%" class="img-show" src='<?php echo wp_get_attachment_image_url($value, "medium_large") ?>' width="300" height="300" loading="lazy" <?php echo $event ?> />
                 <?php endforeach; ?>
             </div>
 
@@ -56,7 +56,7 @@ function la_port_fulls_render_carrousel_btn($img_json, $side)
     ob_start();
 ?>
     <?php if (count($img_json) > 2): ?>
-        <button class="btn-<?php echo $side ?>" onclick="laPortFullSlideShow(this, '<?php echo $side ?>')">
+        <button aria-label="Botão de navegação" class="btn-<?php echo $side ?>" onclick="laPortFullSlideShow(this, '<?php echo $side ?>')">
             <img src="<?php echo LA_PORT_FULL_URL . "assets/media/next.svg" ?>" alt="<?php echo $side ?>" />
         </button>
     <?php endif; ?>

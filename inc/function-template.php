@@ -44,7 +44,7 @@ function la_port_fulls_render_post($post_id)
     <div class="la-port-fulls-modal-bg">
         <div class="la-port-fulls-modal">
 
-            <button class="btn-close" onclick="this.closest('.la-port-fulls-modal-bg').remove(); return false">
+            <button aria-label="Fechar janela" class="btn-close" onclick="this.closest('.la-port-fulls-modal-bg').remove(); return false">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="gray" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
                 </svg>
@@ -56,13 +56,13 @@ function la_port_fulls_render_post($post_id)
             <div class="la-port-fulls-modal-detalhes">
 
                 <div class="la-port-fulls-modal-detalhes-body">
-                    <h3><?php echo $title ?></h3>
+                    <h2><?php echo $title ?></h2>
                     <div>
                         <?php echo wpautop($content) ?>
                     </div>
                     <?php if ($conteudo_url !=  "" &&  $has_index) : ?>
                         <div>
-                            <a class="la-btn" href="<?php echo $conteudo_url ?>" target="_blank" style="max-width: max-content; margin: auto;">Mostrar Conteúdo</a>
+                            <a aria-label="Mostra conteúdo desenvolvido" class="la-btn" href="<?php echo $conteudo_url ?>" target="_blank" style="max-width: max-content; margin: auto;">Mostrar Conteúdo</a>
 
                         </div>
                     <?php endif; ?>
@@ -92,7 +92,7 @@ function la_port_fulls_render_iframe()
     <div class="la-port-fulls-modal-bg">
         <div style="width: 90vw; height: 90vh; position: relative; border-radius: 15px; overflow: hidden;">
 
-            <button class="btn-close" onclick="laRemoveIframe(event)">
+            <button aria-label="Fechar Iframe" class="btn-close" onclick="laRemoveIframe(event)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
                 </svg>
